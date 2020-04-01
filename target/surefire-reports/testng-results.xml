@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="test.SoapUiTest" duration-ms="52" started-at="2019-06-19T12:10:16Z" finished-at="2019-06-19T12:10:16Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="52" started-at="2019-06-19T12:10:16Z" finished-at="2019-06-19T12:10:16Z">
+    </test> <!-- Command line test -->
+  </suite> <!-- test.SoapUiTest -->
+</testng-results>

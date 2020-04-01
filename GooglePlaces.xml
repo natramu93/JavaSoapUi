@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7d7c7e97-1511-4f0b-a352-371c874989b9" activeEnvironment="Default" name="GooglePlaces" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="c26d612b-8977-4ca5-a2f0-92044e057ab9" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://maps.googleapis.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://maps.googleapis.com</con:endpoint></con:endpoints><con:resource name="Output" path="/maps/api/place/findplacefromtext/json" id="efc62fa1-0378-42a0-97ef-bfb2ef06552d"><con:settings/><con:parameters><con:parameter><con:name>key</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>input</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>inputtype</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Output 1" id="d70a0c0f-0371-419c-9985-46a5f78af605" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>FindPlaceFromTextResponse</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://maps.googleapis.com/maps/api/place/findplacefromtext/xml">ns:Response</con:element></con:representation><con:request name="Request 1" id="63775201-30f2-4a75-8a42-7a3bc9b62367" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>https://maps.googleapis.com/maps/api/place/findplacefromtext/xml</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="input" value="pune station"/>
+  <con:entry key="inputtype" value="textquery"/>
+  <con:entry key="key" value="${#Project#key}"/>
+</con:parameters><con:parameterOrder><con:entry>key</con:entry><con:entry>input</con:entry><con:entry>inputtype</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="output" path="/maps/api/place/details/json" id="3f1f3695-c054-4d4d-95a1-15deded6235f"><con:settings/><con:parameters><con:parameter><con:name>key</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>placeid</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Method 1" id="b73a8817-32b7-425b-9c8e-2703658b95fb" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>PlaceDetailsResponse</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://maps.googleapis.com/maps/api/place/details/xml">ns:Response</con:element></con:representation><con:request name="Request 1" id="17fbcb7a-2cd9-4fda-b939-8895ef30e5e9" mediaType="application/json"><con:settings/><con:endpoint>https://maps.googleapis.com</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="key" value="${#Project#key}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>key</con:entry><con:entry>placeid</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="74805174-015d-43cd-a0ec-b0dfd8a602e0" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="fede2095-e000-420a-a559-341aca1e9f0a" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="properties" name="Properties" id="4e7d3662-f518-4256-a1c3-7e81b15539ea"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>b</con:name><con:value>20</con:value></con:property><con:property><con:name>a</con:name><con:value>10</con:value></con:property><con:property><con:name>c</con:name><con:value>30</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script 2" id="725c9e36-4635-4d11-a871-97aa1f225ff7" disabled="true"><con:settings/><con:config><script>import java.util.Properties;
+import java.io.File;
+import java.io.FileInputStream;
+
+File f = new File("E:\\VodafoneSoap\\SOAPUI\\Text.txt");
+FileInputStream fis = new FileInputStream(f);
+Properties p = new Properties();
+p.load(fis);
+for(Object o:p.keySet())
+{
+	context.testCase.testSteps["Properties"].setPropertyValue(o.toString(),p.getProperty(o.toString()));
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="Output 1 - Request 1" id="bc5e1cfe-9338-4b16-91ea-c455803258a7"><con:settings/><con:config service="https://maps.googleapis.com" resourcePath="/maps/api/place/findplacefromtext/json" methodName="Output 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Output 1 - Request 1" id="63775201-30f2-4a75-8a42-7a3bc9b62367" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>https://maps.googleapis.com/maps/api/place/findplacefromtext/xml</con:originalUri><con:assertion type="Simple Contains" id="6b7717b3-c262-44d9-9bf1-718cca618bed" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="input" value="+91 9820098200"/>
+  <con:entry key="inputtype" value="phonenumber"/>
+  <con:entry key="key" value="${#Project#key}"/>
+</con:parameters><con:parameterOrder><con:entry>key</con:entry><con:entry>input</con:entry><con:entry>inputtype</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Copy of Output 1 - Request 1" id="d15f7c20-d44e-4a13-8929-38e7ce118895"><con:settings/><con:config service="https://maps.googleapis.com" resourcePath="/maps/api/place/findplacefromtext/json" methodName="Output 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of Output 1 - Request 1" id="63775201-30f2-4a75-8a42-7a3bc9b62367" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>https://maps.googleapis.com/maps/api/place/findplacefromtext/xml</con:originalUri><con:assertion type="Simple Contains" id="0b85dcec-953a-4f37-9674-8fea6e64e517" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="input" value="+91 9820098200"/>
+  <con:entry key="inputtype" value="phonenumber"/>
+  <con:entry key="key" value="${#Project#key}"/>
+</con:parameters><con:parameterOrder><con:entry>key</con:entry><con:entry>input</con:entry><con:entry>inputtype</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script 1" id="dcf14ef0-1777-407d-ba12-3b3919721e54"><con:settings/><con:config><script>import org.json.simple.parser.JSONParser;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import com.eviware.soapui.model.testsuite.TestStepResult.TestStepStatus;
+
+//FileInputStream fis = new FileInputStream("E:\\GooglePlaceSearch.xlsx");
+XSSFWorkbook wb = new XSSFWorkbook();
+XSSFSheet sh = wb.createSheet("PlaceId");
+XSSFRow row;
+XSSFCell cell;
+def response = context.expand('${Output 1 - Request 1#Response}');
+JSONParser parser = new JSONParser();
+def obj = parser.parse(response);
+JSONObject o = (JSONObject) obj;
+JSONArray array = (JSONArray) o.get("candidates");
+for(int a=0;a&lt;array.size();a++)
+{
+o = (JSONObject) array.get(a);
+log.info(o.get("place_id"));
+context.testCase.setPropertyValue("placeid",o.get("place_id"));
+def result = testRunner.runTestStepByName("Method 1 - Request 1")
+log.info(context.expand('${Method 1 - Request 1#Response}'));
+row = sh.createRow(a);
+cell = row.createCell(0);
+cell.setCellValue(o.get("place_id").toString());
+cell = row.createCell(1);
+if(result==TestStepStatus.OK)
+{
+cell.setCellValue("PASS");
+}
+else
+{
+cell.setCellValue("FAILED");	
+}
+}
+wb.write(new FileOutputStream("E:\\GooglePlaceSearch.xlsx"));
+</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="cf68a3da-4cbe-4776-a636-df7fa7db8578" disabled="true"><con:settings/><con:config><script>import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+def response = context.expand('${Output 1 - Request 1#Response}');
+log.info(response);
+DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
+DocumentBuilder db = df.newDocumentBuilder();
+InputStream stream = new ByteArrayInputStream(response.getBytes(StandardCharsets.UTF_8));
+Document d = db.parse(stream);
+log.info(d.getNodeName());
+NodeList l = d.getElementsByTagName("place_id");
+for(int i=0;i&lt;l.getLength();i++)
+{
+	Node n = l.item(i);
+	log.info(n.getTextContent());
+	context.testCase.setPropertyValue("placeid",n.getTextContent());
+	testRunner.runTestStepByName("Method 1 - Request 1")
+	log.info(context.expand('${Method 1 - Request 1#Response}'));
+}</script></con:config></con:testStep><con:testStep type="restrequest" name="Method 1 - Request 1" id="b5aa2e33-012d-467e-a82e-3f832ea2e7d7" disabled="true"><con:settings/><con:config service="https://maps.googleapis.com" resourcePath="/maps/api/place/details/json" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Method 1 - Request 1" id="17fbcb7a-2cd9-4fda-b939-8895ef30e5e9" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>https://maps.googleapis.com/maps/api/place/details/xml</con:originalUri><con:assertion type="JsonPath Match" id="f7cbbbb9-92d0-4095-a29b-80dcd7ec2451" name="JsonPath Match"><con:configuration><path>status</path><content>OK</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="placeid" value="${#TestCase#placeid}"/>
+  <con:entry key="key" value="${#Project#key}"/>
+</con:parameters><con:parameterOrder><con:entry>key</con:entry><con:entry>placeid</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="goto" name="Conditional Goto" id="75667364-6807-4a54-8f75-af745f637943" disabled="true"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:testStep><con:testStep type="jdbc" name="JDBC Request" id="9d93509c-7b42-4f13-81ef-db7acbac71ce" disabled="true"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" convertColumnNamesToUpperCase="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://192.168.1.14:3306/sakila?user=root&amp;password=welcome</con:connectionString><con:query>select * from sakila.actor</con:query><con:properties/></con:config></con:testStep><con:properties><con:property><con:name>placeid</con:name><con:value>ChIJf2wNYaO55zsRgdv-87SMjf4</con:value></con:property><con:property><con:name>b</con:name><con:value>20</con:value></con:property><con:property><con:name>a</con:name><con:value>10</con:value></con:property><con:property><con:name>c</con:name><con:value>30</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>key</con:name><con:value>AIzaSyBr2R-p7XvNB593f4EeTcK-bQ9q7NmPGg4</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

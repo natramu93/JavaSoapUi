@@ -1,0 +1,4 @@
+2019-06-19 17:22:52,029 INFO  [DefaultSoapUICore] initialized soapui-settings from [C:\Users\Natarajan Ramanathan\soapui-settings.xml]
+2019-06-19 17:22:53,314 INFO  [PluginManager] 0 plugins loaded in 1 ms
+2019-06-19 17:22:53,314 INFO  [DefaultSoapUICore] All plugins loaded
+2019-06-19 17:22:55,125 INFO  [WsdlProject] Loaded project from [file:/E:/VodafoneSoap/JavaSoapUi/GETE2.xml]
